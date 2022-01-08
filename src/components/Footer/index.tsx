@@ -21,7 +21,7 @@ export function Footer() {
             <a href=""><i><BsFacebook /></i></a>
           </div>
           <div className="text">
-            <a href="">Instagram</a>
+            <a target="_blank" href="https://instagram.com/cutbio.site" >Instagram</a>
             <a href="">Facebook</a>
           </div>
         </div>

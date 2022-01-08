@@ -1,13 +1,25 @@
 .header {
   top: 0;
   width: 100%;
-  position: fixed;
+  position: relative;
+
+  @media (max-width: 500px) {
+    width: 90%;
+    display: flex;
+    flex-direction: row;     
+  }
 
   .header-container {
     display: flex;
+    background: #fff;
 
     img {
       width: 80px;
+      cursor: pointer;
+
+      @media (max-width: 500px) {
+        width: 60px;    
+      }
     }
 
     .nav-bar {
@@ -40,6 +52,10 @@
 
             transition: 0.2s;
 
+            @media (max-width: 500px) {
+              height: 40%;
+            }
+
             &:hover {
               filter: brightness(0.9);
             }
@@ -60,6 +76,10 @@
 
             padding: 0.5rem;
             transition: 0.2s;
+
+            @media (max-width: 500px) {
+              padding: 0;
+            }
 
             &:hover {
               filter: brightness(0.9);

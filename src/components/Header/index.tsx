@@ -2,11 +2,15 @@ import './styles.scss';
 import logoImg from '../../images/logo.png';
 
 export function Header() {
+  const redirect = () => {
+    window.location.href = "/";
+  }
+
   return (
     <header className="header">
 
       <div className="header-container">
-        <img src={logoImg} alt="logo cutbio" />
+        <img onClick={redirect} src={logoImg} alt="logo cutbio" />
 
         <nav className="nav-bar">
           <ul>
