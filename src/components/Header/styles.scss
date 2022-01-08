@@ -88,5 +88,30 @@
         }
       }
     }
+
+    .profile {
+      margin: 1rem;
+
+      li {
+        list-style-type: none;
+
+        a {
+          font-size: 30px;
+          color: #303030;
+
+          transition: 0.2s;
+
+          &:hover {
+            filter: brightness(0.5);
+          }
+        }
+      }
+
+      @media (max-width: 650px) {
+        margin: 0;
+        margin-top: 1rem;
+        padding: 0.5rem;
+      }
+    }
   }
 }

@@ -2,6 +2,6 @@ import './styles.scss';
 
 export function BuyPro() {
   return (
-    <h1>Pro</h1>
+    <h1>Em breve!</h1>
   )
 }

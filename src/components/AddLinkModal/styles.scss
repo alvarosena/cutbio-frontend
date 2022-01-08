@@ -1,0 +1,73 @@
+header {
+  h2 {
+    color: #303030;
+  }
+}
+
+.modal-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .avatar {
+    margin-top: 1rem;
+    padding: 1rem;
+
+    width: 100px;
+
+    border-radius: 50%;
+  }
+
+  p {
+    color: #202020;
+    font-size: 18px;
+  }
+
+  .input-url {
+    width: 50%;
+    padding: 1rem;
+    margin: 0.5rem;
+
+    border: 0;
+    border-bottom: 2px solid #77D970;
+    outline: 0;
+
+    font-size: 18px;
+    color: #505050;
+
+    transition: 0.2s;
+
+    &:hover {
+      padding: 1.5rem;
+    }
+
+    @media (max-width: 500px) {
+      width: 90%;
+    }
+  }
+
+  .btn-links {
+    cursor: pointer;
+    margin-top: 1rem;
+    padding: 1rem;
+    width: 50%;
+
+    border: 0;
+    background: #77D970;
+    color: #fff;
+    font-size: 18px;
+  
+    transition: 0.2s;
+
+    &:hover {
+      background: #fff;
+      color: #77D970;
+      outline: 2px solid #77D970;
+    }
+
+    @media (max-width: 500px) {
+      width: 100%;
+    }
+  }
+}

@@ -12,7 +12,7 @@ export function Footer() {
         <div className="terms">
           <a href="">Termos e condições</a>
           <br />
-          <a href="">Politica e privacidade</a>
+          <a href="">Política e privacidade</a>
         </div>
 
         <div className="social">

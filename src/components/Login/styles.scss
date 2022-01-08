@@ -11,7 +11,7 @@
 
     h1 {
       font-size: 3rem;
-      color: #202020;
+      color: #404040;
       margin-bottom: 2rem;
 
       @media (max-width: 650px) {
@@ -44,7 +44,8 @@
 
         font-size: 18px;
 
-        border: 2px solid #77D970;
+        border: 0;
+        border-bottom: 2px solid #77D970;
         border-radius: 0.25rem;
 
         outline: 0;
@@ -66,9 +67,8 @@
         width: 50%;
 
         border: 0;
-        border-radius: 5px;
 
-        background: #B762C1;
+        background: #77D970;
         color: #fff;
         font-size: 18px;
 
@@ -78,7 +78,9 @@
         transition: 0.2s;
 
         &:hover {
-          filter: brightness(0.9);
+          background: #fff;
+          color: #77D970;
+          outline: 2px solid #77D970;
         }
 
         @media (max-width: 650px) {

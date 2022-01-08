@@ -6,9 +6,7 @@ export function Login() {
       <div className="login-container">
         <h1>Bem vindo novamente</h1>
         <form action="" className="form">
-          <p>Nome de usuário</p>
           <input type="text" name="username" placeholder="Nome de usuário" autoFocus />
-          <p>Senha</p>
           <input type="password" name="password" placeholder="Sua senha" autoFocus />
           <button className="btn-sign-up">Entrar na conta</button>
         </form>

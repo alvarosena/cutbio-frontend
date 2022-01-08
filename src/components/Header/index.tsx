@@ -1,5 +1,6 @@
 import './styles.scss';
 import logoImg from '../../images/logo.png';
+import { MdAccountCircle } from 'react-icons/md';
 
 export function Header() {
   const redirect = () => {
@@ -19,7 +20,11 @@ export function Header() {
             <li><a href="/pro">Torne-se pro</a></li>
           </ul>
         </nav>
+        <ul className="profile">
+          <li><a href="/alvarosena"><MdAccountCircle /></a></li>
+        </ul>
       </div>
+
 
     </header>
   )
