@@ -34,9 +34,12 @@ body {
     right: 1.5rem;
     top: 1.5rem;
     border: 0;
+    padding: 0.5rem;
+    border-radius: 5px;
     background: transparent;
-    transition: filter(0.8);
+    transition: 0.2s;
     &:hover {
+      background: white;
       filter: brightness(0.8);
     }
   }

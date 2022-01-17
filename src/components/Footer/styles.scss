@@ -2,7 +2,7 @@
   bottom: 0;
   width: 100%;
   position: fixed;
-  background: #191919;
+  background: #000;
 
 
   .footer-container {
@@ -12,15 +12,11 @@
     .terms {
       display: flex;
       flex-direction: column;
-
-      i {
-        font-size: 14px;
-        color: #fff;
-        }
   
       a {
         color: #f1f1f1;
         font-size: 14px;
+        filter: brightness(0.7);
   
         transition: 0.2s;
         
@@ -47,6 +43,7 @@
 
           i {
             color: #fff;
+            filter: brightness(0.7);
           }
         }
       }
@@ -54,7 +51,7 @@
       .text{
         margin-left: 0.5rem;
         color: #f1f1f1;
-
+        
         font-size: 14px;
         
         display: flex;
@@ -62,6 +59,7 @@
         a {
           margin-bottom: 1rem;
           color: #f1f1f1;
+          filter: brightness(0.7);
 
           &:first-child {
             margin-top: 0.2rem;

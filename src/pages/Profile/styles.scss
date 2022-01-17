@@ -69,6 +69,10 @@
           outline: 2px solid #77D970;
         }
       }
+
+      @media (max-width: 650px) {
+        width: 80%;
+      }
     }
   }
 

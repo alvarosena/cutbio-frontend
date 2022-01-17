@@ -1,7 +1,8 @@
 import './styles.scss';
 import Modal from 'react-modal';
 import { AiOutlineClose } from 'react-icons/ai';
-import alvaroImg from '../../images/profile.jpeg';
+import profileImg from '../../assets/profile.jpeg';
+import { FormEvent, useState } from 'react';
 
 interface AddLinkModal {
   isOpenModal: boolean;
@@ -9,6 +10,19 @@ interface AddLinkModal {
 }
 
 export function AddLinkModal(props: AddLinkModal) {
+  const [name, setName] = useState('');
+  const [url, setUrl] = useState('');
+
+  const handleSubmit = (event: FormEvent) => {
+    event.preventDefault();
+
+    const data = {
+      name,
+      url,
+    }
+
+    console.log(data);
+  }
 
   return (
     <Modal
@@ -29,12 +43,12 @@ export function AddLinkModal(props: AddLinkModal) {
         <h2>Adicionar um novo link</h2>
       </header>
 
-      <form className="modal-form">
-        <img className="avatar" src={alvaroImg} />
+      <form onSubmit={handleSubmit} className="modal-form">
+        <img className="avatar" src={profileImg} />
         <p>@alvarosena</p>
-        <input className="input-url" type="text" placeholder="Nome do link" />
-        <input className="input-url" type="text" placeholder="URL" />
-        <button className="btn-links">Adicionar link</button>
+        <input value={name} className="input-url" onChange={(event) => setName(event.target.value)} type="text" placeholder="Nome do link" />
+        <input value={url} className="input-url" onChange={(event) => setUrl(event.target.value)} type="text" placeholder="URL" />
+        <button type="submit" className="btn-links">Adicionar link</button>
       </form>
 
     </Modal>

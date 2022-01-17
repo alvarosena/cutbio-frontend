@@ -1,8 +1,8 @@
-.sign-up {
+.login {
   width: 100%;
   margin-top: 3rem;
 
-  .sign-up-container {
+  .login-container {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -35,7 +35,8 @@
       }
 
       p {
-        margin-left: 0.5rem;
+        text-align: center;
+        margin: 0.5rem;
       }
 
       input {
@@ -49,7 +50,7 @@
         border-radius: 0.25rem;
 
         outline: 0;
-        
+
         transition: 0.2s;
 
         &:hover {
@@ -61,7 +62,49 @@
         }
       }
 
-      .btn-sign-up {
+      .btn-social-google {
+        cursor: pointer;
+        border: 0;
+
+        padding: 1rem;
+        margin: 0.5rem;
+
+        font-size: 25px;
+        background: #EA4335;
+        color: #fff;
+
+        transition: 0.2s;
+
+        &:hover {
+          background: #fff;
+          color: #EA4335;
+
+          outline: 1px solid #EA4335;
+        }
+      }
+
+      .btn-social-face {
+        cursor: pointer;
+        border: 0;
+
+        padding: 1rem;
+        margin: 0.5rem;
+
+        font-size: 25px;
+        background: #1478F2;
+        color: #fff;
+
+        transition: 0.5s;
+
+        &:hover {
+          background: #fff;
+          color: #1478F2;
+
+          outline: 1px solid #1478F2;
+        }
+      }
+
+      .btn-sign-in {
         cursor: pointer;
         padding: 0.8rem;
         width: 50%;

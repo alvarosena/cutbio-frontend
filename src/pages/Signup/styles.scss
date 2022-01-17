@@ -1,8 +1,8 @@
-.login {
+.sign-up {
   width: 100%;
   margin-top: 3rem;
 
-  .login-container {
+  .sign-up-container {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -35,7 +35,8 @@
       }
 
       p {
-        margin-left: 0.5rem;
+        text-align: center;
+        margin: 0.5rem;
       }
 
       input {
@@ -58,6 +59,70 @@
 
         @media (max-width: 650px) {
           width: 90%;
+        }
+      }
+
+
+      .avatar-upload{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        .upload-icon {
+          cursor: pointer;
+          font-size: 30px;
+          padding: 1.5rem;
+          border-radius: 50%;
+          color: #404040;
+
+          transition: 0.2s;
+
+          &:hover {
+            filter: brightness(0.7);
+          }
+        }
+        margin-bottom: 1rem;
+      }
+
+      .btn-social-google {
+        cursor: pointer;
+        border: 0;
+
+        padding: 1rem;
+        margin: 0.5rem;
+
+        font-size: 25px;
+        background: #EA4335;
+        color: #fff;
+
+        transition: 0.2s;
+
+        &:hover {
+          background: #fff;
+          color: #EA4335;
+
+          outline: 1px solid #EA4335;
+        }
+      }
+
+      .btn-social-face {
+        cursor: pointer;
+        border: 0;
+
+        padding: 1rem;
+        margin: 0.5rem;
+
+        font-size: 25px;
+        background: #1478F2;
+        color: #fff;
+
+        transition: 0.5s;
+
+        &:hover {
+          background: #fff;
+          color: #1478F2;
+
+          outline: 1px solid #1478F2;
         }
       }
 

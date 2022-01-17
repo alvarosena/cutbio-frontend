@@ -3,22 +3,20 @@
   width: 100%;
   position: relative;
 
-  @media (max-width: 500px) {
-    width: 90%;
-    display: flex;
-    flex-direction: row;     
-  }
-
   .header-container {
     display: flex;
     background: #fff;
 
+    @media (max-width: 500px) {
+      width: 95%;    
+    }
+
     img {
-      width: 80px;
+      width: 90px;
       cursor: pointer;
 
       @media (max-width: 500px) {
-        width: 60px;    
+        width: 70px;    
       }
     }
 
@@ -31,58 +29,45 @@
       border-bottom: 1px solid #f0f0f0;
 
       @media (max-width: 500px) {
+        display: flex;
         font-size: 14px;        
       }
 
       ul {
         display: flex;
 
+        @media (max-width: 420px) {
+          display: flex;
+          flex-direction: column;
+          margin-top: 0.5rem;
+        }
+
         li {
-          &:first-child {
-            a {
-              color: #fff;
-            }
-            
-            line-height: 100%;
-            height: 20%;
-            
-            border-radius: 5px;
-
-            background: #77D970;
-
-            transition: 0.2s;
-
-            @media (max-width: 500px) {
-              height: 40%;
-            }
-
-            &:hover {
-              filter: brightness(0.9);
-            }
-          }
-
           list-style-type: none;
           padding: 0.5rem;
           margin-top: 1.2rem;
+
+          @media (max-width: 420px) {
+            margin-top: 0;
+            padding: 0.2rem;
+          }
 
           a {
             &:first-child {
               color: #505050;
             }
 
-            text-decoration: none;
             color: #303030;
             border-radius: 0.25rem;
 
             padding: 0.5rem;
             transition: 0.2s;
 
-            @media (max-width: 500px) {
-              padding: 0;
-            }
+
+            transition: 0.2s;
 
             &:hover {
-              filter: brightness(0.9);
+              color: #77D970;
             }
           }
         }
@@ -92,25 +77,26 @@
     .profile {
       margin: 1rem;
 
-      li {
-        list-style-type: none;
+    
+      list-style-type: none;
 
-        a {
-          font-size: 30px;
-          color: #303030;
+      a {
+        margin-right: 1rem;
 
-          transition: 0.2s;
+        img {
+          width: 50px;
+          border-radius: 50%;
 
-          &:hover {
-            filter: brightness(0.5);
+          @media (max-width: 650px) {
+            width: 30px;
           }
         }
       }
+    
 
       @media (max-width: 650px) {
-        margin: 0;
-        margin-top: 1rem;
-        padding: 0.5rem;
+        margin: 1rem;
+        width: 30px;
       }
     }
   }

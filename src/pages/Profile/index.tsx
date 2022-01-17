@@ -1,23 +1,32 @@
 import './styles.scss';
-import profileImg from '../../images/profile.jpeg';
+import profileImg from '../../assets/profile.jpeg';
 import { AiFillEdit } from 'react-icons/ai';
+import { useContext, useEffect } from 'react';
+import axios from 'axios';
+import { AuthContext } from '../../contexts/AuthContext';
 
 interface AddNewLinkModal {
   openModal: () => void;
 }
 
-export function Profile(props: AddNewLinkModal) {
+
+export function Profile() {
+  const { user, links, isAuthenticated } = useContext(AuthContext);
 
   return (
     <section className="profile-wrapper">
       <div className="profile-container">
         <div className="profile-social">
-          <img src={profileImg} />
-          <p>@alvarosena</p>
-          <a href="">Instagram</a>
-          <a href="">Portfolio</a>
-          <a href="">Youtube</a>
-          <button className="btn-add-link" onClick={props.openModal} >
+          <img src={user?.avatar_url} />
+          <p>{user?.username}</p>
+          {
+            links?.map(link => {
+              return (
+                <a target="_blank" href={link?.url}>{link?.name}</a>
+              )
+            })
+          }
+          <button className="btn-add-link" >
             <AiFillEdit /> Adicionar link
           </button>
         </div>
@@ -42,6 +51,6 @@ export function Profile(props: AddNewLinkModal) {
           <li></li>
         </ul>
       </div>
-    </section>
+    </section >
   )
 }
