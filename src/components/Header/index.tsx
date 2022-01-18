@@ -13,9 +13,10 @@ export function Header() {
   }
 
   const handleLogout = () => {
-    const { 'cutbio.token': token } = parseCookies();
+    const { 'cutbio.token': token, 'cutbio.username': username } = parseCookies();
 
     destroyCookie(null, 'cutbio.token', token);
+    destroyCookie(null, 'cutbio.username', username);
   }
 
   return (

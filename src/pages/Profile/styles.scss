@@ -37,17 +37,43 @@
       text-align: center;
 
       align-items: center;
+
+      input[type="file"] {
+        display: none;
+      }
+
       img {
         width: 100px;
         border-radius: 50%;
       }
 
-      p {
-        margin-top: 1.5rem;
-        font-size: 18px;
+      .user-info{
+        display: flex;
 
-        color: #303030;
+        p {
+          font-size: 18px;
+          margin-top: 1rem;
+          color: #303030;
+        }
+
+        .edit-user-info {
+          cursor: pointer;
+          display: inline-block;
+          margin-top: 0.9rem;
+          margin-left: 0.5rem;
+          padding: 0.1rem;
+          font-size: 20px;
+          color: #303030;
+          border-radius: 0.25rem;
+
+          transition: 0.2s;
+
+          &:hover{
+            background: #c3c3c3;
+          }
+        }
       }
+    
 
       a {
         text-decoration: none;

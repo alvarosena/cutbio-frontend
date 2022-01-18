@@ -10,21 +10,48 @@ header {
   flex-direction: column;
   align-items: center;
 
-  .avatar {
+  .upload-user-avatar {
+    input[type="file"] {
+      display: none;
+    }
+
+    i {
+      cursor: pointer;
+      font-size: 30px;
+      color: #303030;
+
+      transition: 0.5s;
+
+      &:hover{
+        color: #000;
+      }
+    }
+  }
+
+  .my-link {
+    display: flex;
     margin-top: 1rem;
-    padding: 1rem;
 
-    width: 100px;
+    p {
+      padding: 0.5rem;
+    }
 
-    border-radius: 50%;
+    a {
+      margin-top: 0.5rem;
+      color: #303030;
+    }
+
+    @media (max-width: 650px) {
+      p {
+        display: none;
+      }
+
+      font-size: 14px;
+    }
   }
 
-  p {
-    color: #202020;
-    font-size: 18px;
-  }
 
-  .input-url {
+  .input-from-user {
     width: 50%;
     padding: 1rem;
     margin: 0.5rem;
@@ -38,12 +65,13 @@ header {
 
     transition: 0.2s;
 
+
     @media (max-width: 500px) {
       width: 90%;
     }
   }
 
-  .btn-links {
+  .btn-update-profile {
     cursor: pointer;
     margin-top: 1rem;
     padding: 1rem;

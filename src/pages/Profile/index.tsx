@@ -1,16 +1,15 @@
 import './styles.scss';
-import profileImg from '../../assets/profile.jpeg';
-import { AiFillEdit } from 'react-icons/ai';
-import { useContext, useEffect } from 'react';
-import axios from 'axios';
+import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../contexts/AuthContext';
+import { MdModeEdit } from 'react-icons/md';
 
-interface AddNewLinkModal {
-  openModal: () => void;
+interface ProfileModal {
+  openAddLinkModal: () => void;
+  openEditProfileModal: () => void;
 }
 
 
-export function Profile() {
+export function Profile(props: ProfileModal) {
   const { user, links, isAuthenticated } = useContext(AuthContext);
 
   return (
@@ -18,7 +17,12 @@ export function Profile() {
       <div className="profile-container">
         <div className="profile-social">
           <img src={user?.avatar_url} />
-          <p>{user?.username}</p>
+          <div className="user-info">
+            <p>{user?.username}</p>
+            <label onClick={props.openEditProfileModal} className="edit-user-info">
+              <MdModeEdit />
+            </label>
+          </div>
           {
             links?.map(link => {
               return (
@@ -26,8 +30,11 @@ export function Profile() {
               )
             })
           }
-          <button className="btn-add-link" >
-            <AiFillEdit /> Adicionar link
+          <button onClick={props.openAddLinkModal} className="btn-add-link" >
+            Adicionar link
+          </button>
+          <button onClick={props.openAddLinkModal} className="btn-add-link" >
+            Remover link
           </button>
         </div>
       </div>

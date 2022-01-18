@@ -5,9 +5,11 @@ import { useState } from 'react';
 import { AddLinkModal } from './components/AddLinkModal/index';
 import { AuthProvider } from './contexts/AuthContext';
 import { AppRoutes } from './routes';
+import { EditProfileModal } from './components/EditProfileModal/indext';
 
 function App() {
   const [isAddLinkModalOpen, setIsAddLinkModalOpen] = useState(false);
+  const [isEditProfileModalOpen, setIsEditProfileModalOpen] = useState(false);
 
   const handleOpenAddLinkModal = () => {
     setIsAddLinkModalOpen(true);
@@ -17,12 +19,21 @@ function App() {
     setIsAddLinkModalOpen(false);
   }
 
+  const handleOpenEditProfileModal = () => {
+    setIsEditProfileModalOpen(true);
+  }
+
+  const handleCloseEditProfileModal = () => {
+    setIsEditProfileModalOpen(false);
+  }
+
   return (
     <>
       <AuthProvider>
         <Header />
-        <AppRoutes />
+        <AppRoutes handleAddLinkOpenModal={handleOpenAddLinkModal} handleEditProfileOpenModal={handleOpenEditProfileModal} />
         <AddLinkModal isOpenModal={isAddLinkModalOpen} isCloseModal={handleCloseAddLinkModal} />
+        <EditProfileModal isOpenModal={isEditProfileModalOpen} isCloseModal={handleCloseEditProfileModal} />
         <Footer />
       </AuthProvider>
     </>
