@@ -44,13 +44,13 @@ export function AuthProvider({ children }: AuthProviderProps) {
     const url = `/api/users/${username}`;
 
     if (token) {
-      api.get(url, {
+      axios.get(url, {
         headers: {
           Authorization: `Bearer ${token}`
         }
       }).then(res => setUser(res.data[0]))
 
-      api.get(url, {
+      axios.get(url, {
         headers: {
           Authorization: `Bearer ${token}`
         }
