@@ -6,7 +6,7 @@
     "node": "14.x"
   },
   "dependencies": {
-    "axios": "^0.24.0",
+    "axios": "^0.25.0",
     "dotenv": "^14.2.0",
     "next": "^12.0.8",
     "node-sass": "^7.0.1",

@@ -1,4 +1,3 @@
-import axios from "axios";
 import { parseCookies, setCookie } from "nookies";
 import { createContext, ReactNode, useEffect, useState } from "react";
 import { api } from "../services/api";
@@ -44,13 +43,13 @@ export function AuthProvider({ children }: AuthProviderProps) {
     const url = `/api/users/${username}`;
 
     if (token) {
-      axios.get(url, {
+      api.get(url, {
         headers: {
           Authorization: `Bearer ${token}`
         }
       }).then(res => setUser(res.data[0]))
 
-      axios.get(url, {
+      api.get(url, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -60,7 +59,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
   async function signIn({ email, password }: SignCrendentials) {
     try {
-      const response = await axios.post('http://localhost:4000/api/users/sessions/auth', {
+      const response = await api.post('http://localhost:4000/api/users/sessions/auth', {
         email,
         password
       })
