@@ -24,7 +24,7 @@ export function AddLinkModal(props: AddLinkModal) {
       url,
     }
 
-    axios.post('(`http://cutbio.herokuapp.com/api/users/links`', data, {
+    axios.post('(`https://cutbio.herokuapp.com/api/users/links`', data, {
       headers: {
         Authorization: `Bearer ${token}`
       }

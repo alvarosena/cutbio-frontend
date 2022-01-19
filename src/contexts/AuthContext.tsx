@@ -44,13 +44,13 @@ export function AuthProvider({ children }: AuthProviderProps) {
     const url = `/api/users/${username}`;
 
     if (token) {
-      axios.get(`http://cutbio.herokuapp.com/api/users/${username}`, {
+      axios.get(`https://cutbio.herokuapp.com/api/users/${username}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
       }).then(res => setUser(res.data[0]))
 
-      axios.get(`http://cutbio.herokuapp.com/api/users/${username}`, {
+      axios.get(`https://cutbio.herokuapp.com/api/users/${username}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -60,7 +60,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
   async function signIn({ email, password }: SignCrendentials) {
     try {
-      const response = await axios.post('http://cutbio.herokuapp.com/api/users/sessions/auth', {
+      const response = await axios.post('https://cutbio.herokuapp.com/api/users/sessions/auth', {
         email,
         password
       })
