@@ -5,6 +5,7 @@ import { FormEvent, useContext, useState } from 'react';
 import { AuthContext } from '../../contexts/AuthContext';
 import { parseCookies } from 'nookies';
 import { api } from '../../services/api';
+import axios from 'axios';
 
 interface AddLinkModal {
   isOpenModal: boolean;
@@ -23,7 +24,7 @@ export function AddLinkModal(props: AddLinkModal) {
       url,
     }
 
-    api.post('/api/users/links', data, {
+    axios.post('(`http://cutbio.herokuapp.com/api/users/links`', data, {
       headers: {
         Authorization: `Bearer ${token}`
       }

@@ -2,6 +2,7 @@ import './styles.scss';
 import { FormEvent, useState } from 'react';
 import { MdAddAPhoto } from 'react-icons/md';
 import { api } from '../../services/api';
+import axios from 'axios';
 
 export function Signup() {
   const [username, setUsername] = useState('');
@@ -17,7 +18,7 @@ export function Signup() {
       password
     }
 
-    api.post('/api/users', data);
+    axios.post('http://cutbio.herokuapp.com/api/users', data);
     window.location.href = '/login';
   }
 
