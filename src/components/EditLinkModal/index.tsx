@@ -6,6 +6,7 @@ import { FormEvent, useContext, useState } from 'react';
 import { AuthContext } from '../../contexts/AuthContext';
 import axios from 'axios';
 import { parseCookies } from 'nookies';
+import { api } from '../../services/api';
 
 interface AddLinkModal {
   isOpenModal: boolean;
@@ -13,10 +14,16 @@ interface AddLinkModal {
 }
 
 export function EditLinkModal(props: AddLinkModal) {
-  const { user, links } = useContext(AuthContext);
+  const { links } = useContext(AuthContext);
   const [name, setName] = useState('');
   const [url, setUrl] = useState('');
   const { 'cutbio.token': token } = parseCookies();
+
+
+  // const handleDeleteLink = async () => {
+  //   await api.delete(`/api/users/links/${}`)
+  // }
+
 
   return (
     <Modal
@@ -40,7 +47,8 @@ export function EditLinkModal(props: AddLinkModal) {
       <form className="modal-form">
         <input value={name} className="input-url" onChange={(event) => setName(event.target.value)} type="text" placeholder="Novo Titúlo" />
         <input value={url} className="input-url" onChange={(event) => setUrl(event.target.value)} type="text" placeholder="Nova URL" />
-        <button type="submit" className="btn-links">Editar</button>
+        <button type="submit" className="btn-edit-link">Editar</button>
+        <button className="btn-delete-link">Remover link</button>
       </form>
 
     </Modal>

@@ -37,9 +37,6 @@ export function Profile(props: ProfileModal) {
           <button onClick={props.openAddLinkModal} className="btn-add-link" >
             Adicionar link
           </button>
-          <button onClick={props.openAddLinkModal} className="btn-add-link" >
-            Remover link
-          </button>
         </div>
       </div>
 

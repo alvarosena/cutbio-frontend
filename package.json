@@ -2,6 +2,9 @@
   "name": "cutbio-frontend",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "14.x"
+  },
   "dependencies": {
     "axios": "^0.24.0",
     "next": "^12.0.8",
@@ -31,6 +34,8 @@
     "typescript": "^4.5.4"
   },
   "scripts": {
+    "build-css": "node-sass src/ -o src/",
+    "watch-css": "npm run build-css && node-sass src/ -o src/ --watch --recursive",
     "dev": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
