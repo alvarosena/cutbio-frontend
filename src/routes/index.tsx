@@ -8,6 +8,7 @@ import { BuyPro } from '../pages/BuyPro/index';
 interface Modal {
   handleAddLinkOpenModal(): void;
   handleEditProfileOpenModal(): void;
+  handleEditLinkOpenModal(): void;
 }
 
 export function AppRoutes(props: Modal) {
@@ -18,7 +19,11 @@ export function AppRoutes(props: Modal) {
         <Route path="/sign-up" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/pro" element={<BuyPro />} />
-        <Route path="/profile" element={<Profile openAddLinkModal={props.handleAddLinkOpenModal} openEditProfileModal={props.handleEditProfileOpenModal} />} />
+        <Route path="/profile" element={<Profile
+          openAddLinkModal={props.handleAddLinkOpenModal}
+          openEditProfileModal={props.handleEditProfileOpenModal}
+          openEditLinkModal={props.handleEditLinkOpenModal}
+        />} />
       </Routes>
     </Router>
   )

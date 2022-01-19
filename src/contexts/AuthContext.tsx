@@ -1,6 +1,7 @@
 import axios from "axios";
 import { parseCookies, setCookie } from "nookies";
 import { createContext, ReactNode, useEffect, useState } from "react";
+import { api } from "../services/api";
 
 interface User {
   avatar_url: string;
@@ -40,15 +41,16 @@ export function AuthProvider({ children }: AuthProviderProps) {
   useEffect(() => {
     const { 'cutbio.token': token } = parseCookies();
     const { 'cutbio.username': username } = parseCookies();
+    const url = `/api/users/${username}`;
 
     if (token) {
-      axios.get(`http://localhost:4000/api/users/${username}`, {
+      api.get(url, {
         headers: {
           Authorization: `Bearer ${token}`
         }
       }).then(res => setUser(res.data[0]))
 
-      axios.get(`http://localhost:4000/api/users/${username}`, {
+      api.get(url, {
         headers: {
           Authorization: `Bearer ${token}`
         }

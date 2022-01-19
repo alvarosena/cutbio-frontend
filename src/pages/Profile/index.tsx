@@ -6,6 +6,7 @@ import { MdModeEdit } from 'react-icons/md';
 interface ProfileModal {
   openAddLinkModal: () => void;
   openEditProfileModal: () => void;
+  openEditLinkModal: () => void;
 }
 
 
@@ -26,7 +27,10 @@ export function Profile(props: ProfileModal) {
           {
             links?.map(link => {
               return (
-                <a target="_blank" href={link?.url}>{link?.name}</a>
+                <div className="profile-links">
+                  <a target="_blank" href={link?.url}>{link?.name}</a>
+                  <button onClick={props.openEditLinkModal} ><i><MdModeEdit /></i></button>
+                </div>
               )
             })
           }

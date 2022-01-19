@@ -1,11 +1,10 @@
 import './styles.scss';
 import Modal from 'react-modal';
 import { AiOutlineClose } from 'react-icons/ai';
-import profileImg from '../../assets/profile.jpeg';
 import { FormEvent, useContext, useState } from 'react';
 import { AuthContext } from '../../contexts/AuthContext';
-import axios from 'axios';
 import { parseCookies } from 'nookies';
+import { api } from '../../services/api';
 
 interface AddLinkModal {
   isOpenModal: boolean;
@@ -24,7 +23,7 @@ export function AddLinkModal(props: AddLinkModal) {
       url,
     }
 
-    axios.post('http://localhost:4000/api/users/links', data, {
+    api.post('/api/users/links', data, {
       headers: {
         Authorization: `Bearer ${token}`
       }
