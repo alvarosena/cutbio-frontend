@@ -2,7 +2,7 @@ import './styles.scss';
 import Modal from 'react-modal';
 import { AiOutlineClose } from 'react-icons/ai';
 import { MdAddAPhoto } from 'react-icons/md';
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 import axios from 'axios';
 import { parseCookies } from 'nookies';
 
@@ -14,19 +14,21 @@ interface EditProfileModal {
 export function EditProfileModal(props: EditProfileModal) {
   const [avatar, setAvatar] = useState([]);
   const { 'cutbio.token': token } = parseCookies();
+  const { 'cutbio.username': username } = parseCookies();
 
   const onInputChange = (event) => {
     setAvatar(event.target.files)
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (event: FormEvent) => {
+
     const data = new FormData();
 
     for (let i = 0; i < avatar.length; i++) {
       data.append('avatar', avatar[i]);
     }
 
-    axios.patch('http://localhost:4000/api/users/profile/avatar', data, {
+    axios.patch(`https://cutbio-backend.herokuapp.com/api/users/${username}/avatar`, data, {
       headers: {
         Authorization: `Bearer ${token}`
       }
