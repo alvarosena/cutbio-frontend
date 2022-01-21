@@ -5,5 +5,5 @@ import axios from "axios";
 // local -> http://localhost:4000
 
 export const api = axios.create({
-  baseURL: "http://localhost:4000",
+  baseURL: "https://cutbio-backend.herokuapp.com",
 }) 
