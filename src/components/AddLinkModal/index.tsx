@@ -19,7 +19,6 @@ export function AddLinkModal(props: AddLinkModal) {
   const { 'cutbio.token': token } = parseCookies();
 
   const handleSubmit = (event: FormEvent) => {
-    event.preventDefault()
 
     const data = {
       name,

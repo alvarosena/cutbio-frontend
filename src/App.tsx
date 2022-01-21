@@ -6,7 +6,6 @@ import { AddLinkModal } from './components/AddLinkModal/index';
 import { AuthProvider } from './contexts/AuthContext';
 import { AppRoutes } from './routes';
 import { EditProfileModal } from './components/EditProfileModal/indext';
-import { EditLinkModal } from './components/EditLinkModal';
 
 function App() {
   const [isAddLinkModalOpen, setIsAddLinkModalOpen] = useState(false);
@@ -48,7 +47,6 @@ function App() {
         />
         <AddLinkModal isOpenModal={isAddLinkModalOpen} isCloseModal={handleCloseAddLinkModal} />
         <EditProfileModal isOpenModal={isEditProfileModalOpen} isCloseModal={handleCloseEditProfileModal} />
-        <EditLinkModal isOpenModal={isEditLinkModalOpen} isCloseModal={handleCloseEditLinkModal} />
         <Footer />
       </AuthProvider>
     </>
