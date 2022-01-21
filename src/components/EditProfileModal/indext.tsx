@@ -5,6 +5,7 @@ import { MdAddAPhoto } from 'react-icons/md';
 import { FormEvent, useState } from 'react';
 import axios from 'axios';
 import { parseCookies } from 'nookies';
+import { api } from '../../services/api';
 
 interface EditProfileModal {
   isOpenModal: boolean;
@@ -15,6 +16,7 @@ export function EditProfileModal(props: EditProfileModal) {
   const [avatar, setAvatar] = useState([]);
   const { 'cutbio.token': token } = parseCookies();
   const { 'cutbio.username': username } = parseCookies();
+  const myUrl = `https://cutbio.herokuapp.com/${username}`
 
   const onInputChange = (event) => {
     setAvatar(event.target.files)
@@ -29,7 +31,7 @@ export function EditProfileModal(props: EditProfileModal) {
       data.append('avatar', avatar[i]);
     }
 
-    axios.patch(`https://cutbio-backend.herokuapp.com/api/users/${username}/avatar`, data, {
+    api.put(`/api/users/${username}/avatar`, data, {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -63,7 +65,7 @@ export function EditProfileModal(props: EditProfileModal) {
         </label>
         <div className="my-link">
           <p>Meu link:</p>
-          <a target="_blank" href="">https://cutbio.site/alvarosena</a>
+          <a target="_blank" href="">{myUrl}</a>
         </div>
         <button type="submit" className="btn-update-profile">Atualizar perfil</button>
       </form>

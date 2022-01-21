@@ -19,7 +19,6 @@ export function Signup() {
     }
 
     api.post('/api/users', data);
-    // axios.post('https://cutbio-backend.herokuapp.com/api/users', data);
     window.location.href = '/login';
   }
 
