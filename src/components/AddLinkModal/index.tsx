@@ -19,14 +19,12 @@ export function AddLinkModal(props: AddLinkModal) {
   const { 'cutbio.token': token } = parseCookies();
 
   const handleSubmit = (event: FormEvent) => {
-    event.preventDefault();
-
     const data = {
       name,
       url,
     }
 
-    axios.post('https://cutbio.herokuapp.com/api/users/links', data, {
+    axios.post('https://cutbio-backend.herokuapp.com/api/users/links', data, {
       headers: {
         Authorization: `Bearer ${token}`
       }

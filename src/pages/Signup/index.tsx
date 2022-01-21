@@ -18,7 +18,8 @@ export function Signup() {
       password
     }
 
-    axios.post('https://cutbio-backend.herokuapp.com/api/users', data);
+    api.post('/api/users', data);
+    // axios.post('https://cutbio-backend.herokuapp.com/api/users', data);
     window.location.href = '/login';
   }
 

@@ -21,6 +21,7 @@ export function EditProfileModal(props: EditProfileModal) {
   };
 
   const handleSubmit = (event: FormEvent) => {
+    event.preventDefault()
 
     const data = new FormData();
 
