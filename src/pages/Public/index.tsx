@@ -12,7 +12,7 @@ interface ProfileModal {
 }
 
 
-export function Profile(props: ProfileModal) {
+export function Public() {
   const { user, } = useContext(AuthContext);
   const [links, setLinks] = useState([]);
   const { 'cutbio.token': token } = parseCookies();
@@ -65,21 +65,17 @@ export function Profile(props: ProfileModal) {
           }
           <div className="user-info">
             <p>@{user?.username}</p>
-            <button onClick={props.openEditProfileModal} className="btn-edit-profile">Editar perfil</button>
           </div>
           {
             links?.map(link => {
               return (
                 <div className="profile-links">
                   <a key={link?.id} target="_blank" href={link?.url}>{link?.name}</a>
-                  <i className="i-delete-link" onClick={() => deleteLink(link.id)}><GrClose /></i>
                 </div>
               )
             })
           }
-          <button onClick={props.openAddLinkModal} className="btn-add-link" >
-            Adicionar link
-          </button>
+
         </div>
       </div>
 

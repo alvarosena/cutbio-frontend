@@ -4,6 +4,7 @@ import { Signup } from '../pages/Signup/index';
 import { Login } from '../pages/Login/index';
 import { Profile } from '../pages/Profile/index';
 import { BuyPro } from '../pages/BuyPro/index';
+import { Public } from '../pages/Public/index';
 
 interface Modal {
   handleAddLinkOpenModal(): void;
@@ -24,6 +25,7 @@ export function AppRoutes(props: Modal) {
           openEditProfileModal={props.handleEditProfileOpenModal}
           openEditLinkModal={props.handleEditLinkOpenModal}
         />} />
+        <Route path='/:username' element={<Public />}></Route>
       </Routes>
     </Router>
   )

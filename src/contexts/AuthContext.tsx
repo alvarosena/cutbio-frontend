@@ -23,7 +23,6 @@ interface SignCrendentials {
 interface AuthContextData {
   signIn(credentials: SignCrendentials): Promise<void>;
   user: User,
-  links: Link[],
   isAuthenticated: boolean;
 }
 
@@ -35,7 +34,6 @@ export const AuthContext = createContext({} as AuthContextData);
 
 export function AuthProvider({ children }: AuthProviderProps) {
   const [user, setUser] = useState<User>();
-  const [links, setLinks] = useState<Link[]>();
   const isAuthenticated = !!user;
 
   useEffect(() => {
@@ -50,11 +48,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
         }
       }).then(res => setUser(res.data[0]))
 
-      api.get(url, {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      }).then(res => setLinks(res.data[1]))
     }
   }, []);
 
@@ -84,7 +77,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
   }
 
   return (
-    <AuthContext.Provider value={{ signIn, user, links, isAuthenticated }}>
+    <AuthContext.Provider value={{ signIn, user, isAuthenticated }}>
       {children}
     </AuthContext.Provider>
   )

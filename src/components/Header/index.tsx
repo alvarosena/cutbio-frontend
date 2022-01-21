@@ -1,9 +1,8 @@
 import './styles.scss';
-import logoImg from '../../assets/logo.png';
-import profileImg from '../../assets/profile.jpeg';
 import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthContext';
 import { destroyCookie, parseCookies } from 'nookies';
+import { MdAccountCircle } from 'react-icons/md';
 
 export function Header() {
   const { user } = useContext(AuthContext);
@@ -23,7 +22,7 @@ export function Header() {
     <header className="header">
 
       <div className="header-container">
-        <img onClick={redirect} src={logoImg} alt="logo cutbio" />
+        {/* <img className="logo" onClick={redirect} src={logoImg} alt="logo cutbio" /> */}
 
         <nav className="nav-bar">
           <ul>
@@ -34,7 +33,17 @@ export function Header() {
           </ul>
         </nav>
         <div className="profile">
-          <a href="/profile" ><img src={user?.avatar_url} /></a>
+          {
+            !user?.email ? <a href="/login"><i className="i-profile-none" ><MdAccountCircle /></i></a> :
+
+              <a href="/profile" >
+                {
+                  user?.avatar_url ? <img src={user?.avatar_url} /> :
+                    <i className="i-profile-none" ><MdAccountCircle /></i>
+                }
+
+              </a>
+          }
         </div>
       </div>
 
