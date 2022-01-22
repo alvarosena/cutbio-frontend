@@ -1,21 +1,13 @@
 import './styles.scss';
-import { useContext, useEffect, useState } from 'react';
-import { AuthContext } from '../../contexts/AuthContext';
-import { MdAccountCircle } from 'react-icons/md';
-import { GrClose } from 'react-icons/gr';
+import { useEffect, useState } from 'react';
 import { api } from '../../services/api';
-import { parseCookies } from 'nookies';
-interface ProfileModal {
-  openAddLinkModal: () => void;
-  openEditProfileModal: () => void;
-  openEditLinkModal: () => void;
-}
+import { useParams } from 'react-router-dom';
 
 
 export function Public() {
-  const { user, } = useContext(AuthContext);
+  const [userInfo, setUserInfo] = useState([]);
   const [links, setLinks] = useState([]);
-  const { 'cutbio.token': token } = parseCookies();
+  const params = useParams();
 
   useEffect(() => {
     buildPage();
@@ -23,16 +15,12 @@ export function Public() {
 
   const buildPage = async () => {
     try {
-      const { 'cutbio.username': username } = parseCookies();
 
-      const response = await api.get(`/api/users/${username}/links`, {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      });
+      const response = await api.get(`/api/users/${params.username}`);
 
       if (response && response.data) {
-        setLinks(response.data);
+        setUserInfo(response.data);
+        setLinks(response.data[1]);
       }
     }
     catch (err) {
@@ -40,37 +28,28 @@ export function Public() {
     }
   }
 
-  const deleteLink = async (linkId: string) => {
-    try {
-      await api.delete(`/api/users/links/${linkId}`, {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      });
-
-      buildPage();
-    }
-    catch (err) {
-      console.log(err);
-    }
-  }
-
   return (
-    <section className="profile-wrapper">
-      <div className="profile-container">
-        <div className="profile-social">
+    <section className="public-wrapper">
+      <div className="public-container">
+        <div className="public-social">
           {
-            user?.avatar_url ? <img src={user?.avatar_url} /> :
-              <i className="i-profile-none"><MdAccountCircle /></i>
-          }
-          <div className="user-info">
-            <p>@{user?.username}</p>
-          </div>
-          {
-            links?.map(link => {
+            userInfo.map(info => {
               return (
-                <div className="profile-links">
-                  <a key={link?.id} target="_blank" href={link?.url}>{link?.name}</a>
+                <>
+                  <img key={info?.id} src={info?.avatar_url} />
+
+                  <div className="public-info">
+                    <p key={info?.id}>{info?.username}</p>
+                  </div>
+                </>
+              )
+            })
+          }
+          {
+            links.map(link => {
+              return (
+                <div className="public-links">
+                  <a target="_blank" href={link?.url}>{link?.name}</a>
                 </div>
               )
             })

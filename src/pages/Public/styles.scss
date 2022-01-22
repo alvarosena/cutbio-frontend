@@ -1,7 +1,7 @@
-.profile-wrapper {
+.public-wrapper {
   width: 100%;
 
-  .profile-container {
+  .public-container {
     display: flex;
     justify-content: center;
 
@@ -27,12 +27,10 @@
       }
     }
 
-    .profile-social {
+    .public-social {
       width: 50%;
 
       margin-top: 2rem;
-
-
       display: flex;
       flex-direction: column;
 
@@ -40,21 +38,12 @@
 
       align-items: center;
 
-      input[type="file"] {
-        display: none;
-      }
-
-      .i-profile-none {
-        font-size: 90px;
-        color: #c3c3c3;
-      }
-
       img {
         width: 100px;
         border-radius: 50%;
       }
 
-      .user-info{
+      .public-info{
 
         p {
           font-size: 18px;
@@ -62,35 +51,14 @@
           color: #303030;
         }
 
-        .btn-edit-profile {
-          cursor: pointer;
-
-          margin-top: 1rem;
-          padding: 0.4rem;
-          border: 1px solid #c3c3c3;
-          background: #fff;
-
-          border-radius: 0.25rem;
-          font-weight: 600;
-
-          outline: 0;
-
-          transition: 0.2s;
-
-          &:hover {
-            filter: brightness(0.9);
-          }
-        }
       }
     
-
-      .profile-links{
+      .public-links{
         width: 100%;
         display: flex;
         flex-direction: row;
 
         a {
-          margin-left: 2rem;
           text-decoration: none;
           margin-top: 2rem;
           background: #77D970;
@@ -112,41 +80,10 @@
           }
         }
 
-        .i-delete-link {
-          cursor: pointer;
-          margin-top: 3rem;
-          margin-left: 1rem;
-        }
-
-        button {
-          cursor: pointer;
-          background: #77D970;
-          border: 0;
-          height: 63%;
-          padding: 1rem;
-
-          margin-top: 2rem;
-
-          transition: 0.2s;
-
-          &:hover {
-            background: #fff;
-            border: 2px solid #77D970;
-          }
-          
-          i {
-            color: #fff;
-            font-size: 18px;
-          
-            &:hover {
-              color: #77D970;
-            }
-          }
-        }
       }
 
       @media (max-width: 650px) {
-        width: 80%;
+        width: 90%;
       }
     }
   }

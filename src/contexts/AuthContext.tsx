@@ -39,14 +39,14 @@ export function AuthProvider({ children }: AuthProviderProps) {
   useEffect(() => {
     const { 'cutbio.token': token } = parseCookies();
     const { 'cutbio.username': username } = parseCookies();
-    const url = `/api/users/${username}`;
+    const url = `/api/users/profile/${username}`;
 
     if (token) {
       api.get(url, {
         headers: {
           Authorization: `Bearer ${token}`
         }
-      }).then(res => setUser(res.data[0]))
+      }).then(res => setUser(res.data))
 
     }
   }, []);

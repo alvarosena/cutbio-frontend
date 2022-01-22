@@ -6,11 +6,13 @@ import { AddLinkModal } from './components/AddLinkModal/index';
 import { AuthProvider } from './contexts/AuthContext';
 import { AppRoutes } from './routes';
 import { EditProfileModal } from './components/EditProfileModal/indext';
+import { PublicRoutes } from './routes/public.routes';
 
-function App() {
+
+
+export function App() {
   const [isAddLinkModalOpen, setIsAddLinkModalOpen] = useState(false);
   const [isEditProfileModalOpen, setIsEditProfileModalOpen] = useState(false);
-  const [isEditLinkModalOpen, setIsEditLinkModalOpen] = useState(false);
 
   const handleOpenAddLinkModal = () => {
     setIsAddLinkModalOpen(true);
@@ -28,14 +30,6 @@ function App() {
     setIsEditProfileModalOpen(false);
   }
 
-  const handleOpenEditLinkModal = () => {
-    setIsEditLinkModalOpen(true);
-  }
-
-  const handleCloseEditLinkModal = () => {
-    setIsEditLinkModalOpen(false);
-  }
-
   return (
     <>
       <AuthProvider>
@@ -43,14 +37,13 @@ function App() {
         <AppRoutes
           handleAddLinkOpenModal={handleOpenAddLinkModal}
           handleEditProfileOpenModal={handleOpenEditProfileModal}
-          handleEditLinkOpenModal={handleOpenEditLinkModal}
         />
         <AddLinkModal isOpenModal={isAddLinkModalOpen} isCloseModal={handleCloseAddLinkModal} />
         <EditProfileModal isOpenModal={isEditProfileModalOpen} isCloseModal={handleCloseEditProfileModal} />
         <Footer />
       </AuthProvider>
+      <PublicRoutes />
     </>
+
   );
 }
-
-export default App;

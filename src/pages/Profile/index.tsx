@@ -8,7 +8,6 @@ import { parseCookies } from 'nookies';
 interface ProfileModal {
   openAddLinkModal: () => void;
   openEditProfileModal: () => void;
-  openEditLinkModal: () => void;
 }
 
 
