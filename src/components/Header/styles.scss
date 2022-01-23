@@ -7,8 +7,6 @@
     display: flex;
     background: #fff;
 
-
-
     h1 {
       cursor: pointer;
 
@@ -22,9 +20,8 @@
       width: 100%;
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: center;
 
-      border-bottom: 1px solid #f0f0f0;
 
       @media (max-width: 500px) {
         display: flex;
@@ -66,7 +63,7 @@
             transition: 0.2s;
 
             &:hover {
-              color: #77D970;
+              color: #7070fc;
             }
           }
         }

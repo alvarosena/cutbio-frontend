@@ -5,28 +5,6 @@
     display: flex;
     justify-content: center;
 
-    .btn-add-link {
-      margin-top: 4rem;
-      font-size: 18px;
-      width: 50%;
-
-      color: #fff;
-
-      cursor: pointer;
-      padding: 1rem;
-
-      background: #77D970;
-      border: 0;
-
-      transition: 0.2s;
-
-      &:hover {
-        color: #77D970;
-        background: #fff;
-        outline: 2px solid #77D970;
-      }
-    }
-
     .public-social {
       width: 50%;
 
@@ -61,10 +39,12 @@
         a {
           text-decoration: none;
           margin-top: 2rem;
-          background: #77D970;
+          background: #7070fc;
           color: #fff;
           width: 100%;
   
+          border-radius: 30px;
+
           font-size: 18px;
   
           padding: 1rem;
@@ -73,9 +53,9 @@
   
           &:hover {
             background: #fff;
-            color: #77D970;
+            color: #7070fc;
   
-            border: 2px solid #77D970;
+            border: 2px solid #7070fc;
 
           }
         }

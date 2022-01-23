@@ -1,6 +1,5 @@
 import './styles/global.scss';
 import { Header } from "./components/Header/index";
-import { Footer } from "./components/Footer/index";
 import { useState } from 'react';
 import { AddLinkModal } from './components/AddLinkModal/index';
 import { AuthProvider } from './contexts/AuthContext';
@@ -40,7 +39,6 @@ export function App() {
         />
         <AddLinkModal isOpenModal={isAddLinkModalOpen} isCloseModal={handleCloseAddLinkModal} />
         <EditProfileModal isOpenModal={isEditProfileModalOpen} isCloseModal={handleCloseEditProfileModal} />
-        <Footer />
       </AuthProvider>
       <PublicRoutes />
     </>

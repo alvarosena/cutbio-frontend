@@ -8,6 +8,14 @@
     flex-direction: column;
     align-items: center;
 
+    .undrawImg {
+      margin: 1rem;
+      width: 600px;
+  
+      @media (max-width: 850px) {
+        width: 400px;
+      }
+    }
 
     h1 {
       font-size: 3rem;
@@ -23,9 +31,8 @@
 
 
     .form {
-      display: flex;
       width: 50%;
-
+      display: flex;
       flex-direction: column;
 
       padding: 1rem;
@@ -35,7 +42,6 @@
       }
 
       p {
-        text-align: center;
         margin: 0.5rem;
       }
 
@@ -43,19 +49,12 @@
         padding: 0.8rem;
         margin: 0.3rem;
 
+        background: #c3c3c3;
+
         font-size: 18px;
 
         border: 0;
-        border-bottom: 2px solid #77D970;
         border-radius: 0.25rem;
-
-        outline: 0;
-
-        transition: 0.2s;
-
-        &:hover {
-          padding: 20px;
-        }
 
         @media (max-width: 650px) {
           width: 90%;
@@ -107,28 +106,26 @@
       .btn-sign-in {
         cursor: pointer;
         padding: 0.8rem;
-        width: 50%;
+        width: 100%;
 
         border: 0;
+        border-radius: 5px;
 
-        background: #77D970;
+        background: #7070fc;
         color: #fff;
         font-size: 18px;
 
-        margin-left: 23%;
         margin-top: 1rem;
 
         transition: 0.2s;
 
         &:hover {
-          background: #fff;
-          color: #77D970;
-          outline: 2px solid #77D970;
+          filter: brightness(0.8);
         }
 
         @media (max-width: 650px) {
-          width: 80%;
-          margin-left: 10%;
+          width: 90%;
+          margin-left: 1rem;
         }
       }
     }
