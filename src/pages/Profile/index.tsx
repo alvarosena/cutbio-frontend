@@ -2,9 +2,10 @@ import './styles.scss';
 import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../contexts/AuthContext';
 import { MdAccountCircle } from 'react-icons/md';
-import { GrClose } from 'react-icons/gr';
+import { RiDeleteBackFill } from 'react-icons/ri';
 import { api } from '../../services/api';
 import { parseCookies } from 'nookies';
+import { AiOutlineLink } from 'react-icons/ai';
 interface ProfileModal {
   openAddLinkModal: () => void;
   openEditProfileModal: () => void;
@@ -71,13 +72,13 @@ export function Profile(props: ProfileModal) {
               return (
                 <div className="profile-links">
                   <a key={link?.id} target="_blank" href={link?.url}>{link?.name}</a>
-                  <i className="i-delete-link" onClick={() => deleteLink(link.id)}><GrClose /></i>
+                  <i className="i-delete-link" onClick={() => deleteLink(link.id)}><RiDeleteBackFill /></i>
                 </div>
               )
             })
           }
           <button onClick={props.openAddLinkModal} className="btn-add-link" >
-            Adicionar link
+            <i><AiOutlineLink /></i>
           </button>
         </div>
       </div>

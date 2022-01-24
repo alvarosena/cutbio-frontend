@@ -25,10 +25,8 @@ export function Login() {
       <div className="login-container">
         <h1>Bem vindo novamente!</h1>
         <form className="form" onSubmit={handleSubmit}>
-          <p>E-mail</p>
-          <input value={email} onChange={(event) => setEmail(event.target.value)} type="email" name="email" autoFocus />
-          <p>Senha</p>
-          <input value={password} onChange={(event) => setPassword(event.target.value)} type="password" name="password" autoFocus />
+          <input value={email} onChange={(event) => setEmail(event.target.value)} type="email" name="email" placeholder="E-mail" autoFocus />
+          <input value={password} onChange={(event) => setPassword(event.target.value)} type="password" name="password" placeholder="Sua senha" autoFocus />
           <button className="btn-sign-in" type="submit" >Entrar na conta</button>
         </form>
 

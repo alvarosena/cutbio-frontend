@@ -49,7 +49,7 @@
         padding: 0.8rem;
         margin: 0.3rem;
 
-        background: #c3c3c3;
+        background: #F7F7F7;
 
         font-size: 18px;
 
@@ -58,48 +58,6 @@
 
         @media (max-width: 650px) {
           width: 90%;
-        }
-      }
-
-      .btn-social-google {
-        cursor: pointer;
-        border: 0;
-
-        padding: 1rem;
-        margin: 0.5rem;
-
-        font-size: 25px;
-        background: #EA4335;
-        color: #fff;
-
-        transition: 0.2s;
-
-        &:hover {
-          background: #fff;
-          color: #EA4335;
-
-          outline: 1px solid #EA4335;
-        }
-      }
-
-      .btn-social-face {
-        cursor: pointer;
-        border: 0;
-
-        padding: 1rem;
-        margin: 0.5rem;
-
-        font-size: 25px;
-        background: #1478F2;
-        color: #fff;
-
-        transition: 0.5s;
-
-        &:hover {
-          background: #fff;
-          color: #1478F2;
-
-          outline: 1px solid #1478F2;
         }
       }
 

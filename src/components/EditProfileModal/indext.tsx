@@ -63,10 +63,7 @@ export function EditProfileModal(props: EditProfileModal) {
           <input type="file" onChange={onInputChange} />
           <i><MdAddAPhoto /></i>
         </label>
-        <div className="my-link">
-          <p>Meu link:</p>
-          <a target="_blank" href="">{myUrl}</a>
-        </div>
+        <input type="text" name="username" placeholder="Novo nome de usuário" />
         <button type="submit" className="btn-update-profile">Atualizar perfil</button>
       </form>
 

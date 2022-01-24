@@ -28,6 +28,26 @@ header {
     }
   }
 
+  
+  input {
+    padding: 0.8rem;
+    margin: 0.3rem;
+    width: 50%;
+    margin-top: 2rem;
+
+
+    background: #F7F7F7;
+
+    font-size: 18px;
+
+    border: 0;
+    border-radius: 0.25rem;
+
+    @media (max-width: 650px) {
+      width: 90%;
+    }
+  }
+
   .my-link {
     display: flex;
     margin-top: 1rem;
@@ -78,16 +98,15 @@ header {
     width: 50%;
 
     border: 0;
-    background: #77D970;
+    border-radius: 30px;
+    background: #7070fc;
     color: #fff;
     font-size: 18px;
   
     transition: 0.2s;
 
     &:hover {
-      background: #fff;
-      color: #77D970;
-      outline: 2px solid #77D970;
+      filter: brightness(0.8);
     }
 
     @media (max-width: 500px) {

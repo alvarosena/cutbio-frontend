@@ -28,7 +28,7 @@ export function Header() {
           <ul>
             <li><a href="/sign-up">Criar conta</a></li>
             <li><a href="/login">Entrar</a></li>
-            <li><a href="/pro">Torne-se pro</a></li>
+            <li><a href="/login">Torne-se pro</a></li>
             <li><a onClick={handleLogout} href="/login">Sair</a></li>
           </ul>
         </nav>

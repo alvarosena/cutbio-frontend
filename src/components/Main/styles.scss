@@ -2,8 +2,102 @@
   width: 100%;
   margin-top: 3rem;
 
+  @media(max-width: 650px) {
+    width: 90%;
+  }
+
   .main-container{
-    text-align: center;
+    text-align: left;
+    margin-left: 4rem;
+
+    @media(max-width: 650px) {
+      font-size: 1rem;
+      margin-left: 2rem;
+    }
+
+    .flex-heading {
+      display: flex;
+      flex-direction: row;  
+
+      .heading-links {
+        margin-left: 1rem;
+        font-size: 4rem;
+        color: #7070fc;
+      }
+  }
+
+  .flex-about {
+    display: flex;
+    flex-direction: row;
+
+    @media(max-width: 650px) {
+      display: flex;
+      flex-direction: column;
+    }
+
+    h1 {
+      color: #7070fc;
+
+      @media(max-width: 650px) {
+        font-size: 2rem;
+      }
+    }
+
+    .homeImg {
+      width: 500px;
+
+      @media(max-width: 650px) {
+        width: 300px;
+      }
+    }
+
+    .flex-about-p {
+      margin-top: 8rem;
+      display: flex;
+      flex-direction: column;
+
+      @media(max-width: 650px) {
+        margin-top: 1rem;
+      }
+
+      .link-get-started {
+        width: 25%;
+        padding: 1.2rem;
+        font-size: 18px;
+        text-align: center;
+        text-decoration: none;
+  
+        background: #303030;
+        border: 0;
+        border-radius: 30px;
+        color: #7070fc;
+        
+  
+        transition: 0.2s;
+  
+        &:hover {
+          background: #7070fc;
+          color: #303030;
+  
+          text-decoration: #000;
+        }
+
+        @media(max-width: 650px) {
+          width: 50%;
+          margin-left: 2.5rem;
+        }
+      }
+
+
+      p {
+        @media(max-width: 650px) {
+          margin-left: 14px;
+        }
+      }
+    }
+
+  }
+
 
     h1 {
       font-size: 3rem;
@@ -21,27 +115,5 @@
       }
     }
 
-    .link-get-started {
-
-      padding: 1.2rem;
-      font-size: 20px;
-      text-decoration: none;
-
-      background: #B762C1;
-      border: 0;
-      border-radius: 30px;
-      color: #fff;
-      
-
-      transition: 0.2s;
-
-      &:hover {
-        background: #fff;
-        color: #B762C1;
-        outline: 1px solid #B762C1;
-
-        text-decoration: #000;
-      }
-    }
   }
 }

@@ -56,21 +56,13 @@
 
       input {
         padding: 0.8rem;
-        margin: 0.3rem;
+        margin: 1rem;
 
-        background: #c3c3c3;
+        background: #F7F7F7;
         font-size: 18px;
 
         border: 0;
         border-radius: 0.25rem;
-
-        outline: 0;
-
-        transition: 0.2s;
-
-        &:hover {
-          padding: 20px;
-        }
 
         @media (max-width: 650px) {
           width: 90%;

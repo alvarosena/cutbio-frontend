@@ -28,10 +28,10 @@ header {
     width: 50%;
     padding: 1rem;
     margin: 0.5rem;
+    margin-top: 1.5rem;
 
+    background: #F7F7F7;
     border: 0;
-    border-bottom: 2px solid #77D970;
-    outline: 0;
 
     font-size: 18px;
     color: #505050;
@@ -50,16 +50,15 @@ header {
     width: 50%;
 
     border: 0;
-    background: #77D970;
+    border-radius: 30px;
+    background: #7070fc;
     color: #fff;
     font-size: 18px;
   
     transition: 0.2s;
 
     &:hover {
-      background: #fff;
-      color: #77D970;
-      outline: 2px solid #77D970;
+      filter: brightness(0.8);
     }
 
     @media (max-width: 500px) {

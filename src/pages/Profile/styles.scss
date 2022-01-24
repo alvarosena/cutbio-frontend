@@ -6,24 +6,23 @@
     justify-content: center;
 
     .btn-add-link {
-      margin-top: 4rem;
-      font-size: 18px;
-      width: 50%;
-
-      color: #fff;
-
       cursor: pointer;
+      margin-top: 4rem;
+      width: 20%;
       padding: 1rem;
 
-      background: #77D970;
+      background: #7070fc;
       border: 0;
 
       transition: 0.2s;
 
       &:hover {
-        color: #77D970;
-        background: #fff;
-        outline: 2px solid #77D970;
+        filter: brightness(0.8);
+      }
+
+      i {
+        font-size: 25px;
+        color: #fff;
       }
     }
 
@@ -93,7 +92,8 @@
           margin-left: 2rem;
           text-decoration: none;
           margin-top: 2rem;
-          background: #77D970;
+          background: #7070fc;
+          border-radius: 30px;
           color: #fff;
           width: 100%;
   
@@ -105,9 +105,9 @@
   
           &:hover {
             background: #fff;
-            color: #77D970;
+            color: #7070fc;
   
-            border: 2px solid #77D970;
+            border: 2px solid #7070fc;
 
           }
         }
@@ -116,6 +116,12 @@
           cursor: pointer;
           margin-top: 3rem;
           margin-left: 1rem;
+
+          color: #7070fc;
+
+          &:hover {
+            filter: brightness(0.8);
+          }
         }
 
         button {
